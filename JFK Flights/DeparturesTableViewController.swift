@@ -27,17 +27,20 @@ class DeparturesTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView,
+                            numberOfRowsInSection section: Int) -> Int {
         return flightArray.count
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView,
+                            heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DepartureFlightCell", for: indexPath) as? DepartureCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DepartureFlightCell",
+                                                       for: indexPath) as? DepartureCell else {return UITableViewCell()}
         
         let flight: Flight = flightArray[indexPath.row]
         
@@ -54,7 +57,7 @@ class DeparturesTableViewController: UITableViewController {
         
         switch flight.primaryFlightStatus {
         case .Cancelled:
-            cell.flightTimeLabel.text = "CANCEL"
+            cell.flightTimeLabel.text = "CANCELLED"
         default:
             cell.flightTimeLabel.text = flight.formatFlightTimes(hour: flight.scheduledDeparture.hour, minute: flight.scheduledDeparture.minute)
         }
@@ -118,37 +121,74 @@ class DeparturesTableViewController: UITableViewController {
     func createData() -> [Flight]{
         
         //Declare Airlines
-        let americanAirlnes = Airline(name: "American Airlines", callSign: "AA")
-        let emirates = Airline(name: "Emirates", callSign: "EK")
-        let royalAirMaroc = Airline(name: "Royal Air Maroc", callSign: "AT")
-        let alitalia = Airline(name: "Alitalia", callSign: "AZ")
-        let azul = Airline(name: "Azul", callSign: "AD")
-        let saAvianca = Airline(name: "SA Avianca", callSign: "AV")
-        let virginAtlantic = Airline(name: "Virgin Atlantic", callSign: "VS")
-        let endeavourAir = Airline(name: "Endeavour Air", callSign: "9E")
-        let delta = Airline(name: "Delta Airlines", callSign: "DL")
-        let cathayPacific = Airline(name: "Cathay Pacific", callSign: "CX")
+        let americanAirlnes = Airline(name: "American Airlines",
+                                      callSign: "AA")
+        let emirates = Airline(name: "Emirates",
+                               callSign: "EK")
+        let royalAirMaroc = Airline(name: "Royal Air Maroc",
+                                    callSign: "AT")
+        let alitalia = Airline(name: "Alitalia",
+                               callSign: "AZ")
+        let azul = Airline(name: "Azul",
+                           callSign: "AD")
+        let saAvianca = Airline(name: "SA Avianca",
+                                callSign: "AV")
+        let virginAtlantic = Airline(name: "Virgin Atlantic",
+                                     callSign: "VS")
+        let endeavourAir = Airline(name: "Endeavour Air",
+                                   callSign: "9E")
+        let delta = Airline(name: "Delta Airlines",
+                            callSign: "DL")
+        let cathayPacific = Airline(name: "Cathay Pacific",
+                                    callSign: "CX")
         
         //Declare Airports
-        let jfk = Airport(name: "John F. Kennedy Airport", city: "New York", callSign: "JFK")
-        let dfw = Airport(name: "Dallas/Fort Worth International Airport", city: "Dallas", callSign: "DFW")
-        let bos = Airport(name: "Logan International", city: "Boston", callSign: "BOS")
-        let cmn = Airport(name: "Mohamed V International", city: "Casablanca", callSign: "CMN")
-        let cle = Airport(name: "Cleveland Hopkins International", city: "Cleveland", callSign: "CLE")
-        let fll = Airport(name: "Fort Lauterdale - Hollywood International", city: "Fort Lauterdale", callSign: "FLL")
-        let ist = Airport(name: "Istanbul", city: "Istanbul", callSign: "IST")
-        let dtw = Airport(name: "Detroit Metropolitan Wayne County", city: "Detroit", callSign: "DTW")
-        let atl = Airport(name: "Hartsfield-Jackson Atlanta International", city: "Atlanta", callSign: "ATL")
-        let yyz = Airport(name: "Pearson International", city: "Toronto", callSign: "YYZ")
+        let jfk = Airport(name: "John F. Kennedy Airport",
+                          city: "New York",
+                          callSign: "JFK")
+        let dfw = Airport(name: "Dallas/Fort Worth International Airport",
+                          city: "Dallas",
+                          callSign: "DFW")
+        let bos = Airport(name: "Logan International",
+                          city: "Boston",
+                          callSign: "BOS")
+        let cmn = Airport(name: "Mohamed V International",
+                          city: "Casablanca",
+                          callSign: "CMN")
+        let cle = Airport(name: "Cleveland Hopkins International",
+                          city: "Cleveland",
+                          callSign: "CLE")
+        let fll = Airport(name: "Fort Lauterdale - Hollywood International",
+                          city: "Fort Lauterdale",
+                          callSign: "FLL")
+        let ist = Airport(name: "Istanbul",
+                          city: "Istanbul",
+                          callSign: "IST")
+        let dtw = Airport(name: "Detroit Metropolitan Wayne County",
+                          city: "Detroit",
+                          callSign: "DTW")
+        let atl = Airport(name: "Hartsfield-Jackson Atlanta International",
+                          city: "Atlanta",
+                          callSign: "ATL")
+        let yyz = Airport(name: "Pearson International",
+                          city: "Toronto",
+                          callSign: "YYZ")
         
         //Declare Planes
-        let boeing787800 = Plane(manufacturer: "Boeing", model: "787-800")
-        let embraer190 = Plane(manufacturer: "Embraer", model: "190")
-        let boeing7878 = Plane(manufacturer: "Boeing", model: "787-8")
-        let bombardierCRJ = Plane(manufacturer: "Bombardier", model: "CRJ")
-        let airbusA320 = Plane(manufacturer: "Airbus", model: "A320")
-        let airbus330300 = Plane(manufacturer: "Airbus", model: "330-300")
-        let boeing7478f = Plane(manufacturer: "Boeing", model: "747-8F")
+        let boeing787800 = Plane(manufacturer: "Boeing",
+                                 model: "787-800")
+        let embraer190 = Plane(manufacturer: "Embraer",
+                               model: "190")
+        let boeing7878 = Plane(manufacturer: "Boeing",
+                               model: "787-8")
+        let bombardierCRJ = Plane(manufacturer: "Bombardier",
+                                  model: "CRJ")
+        let airbusA320 = Plane(manufacturer: "Airbus",
+                               model: "A320")
+        let airbus330300 = Plane(manufacturer: "Airbus",
+                                 model: "330-300")
+        let boeing7478f = Plane(manufacturer: "Boeing",
+                                model: "747-8F")
         
         //Declare Flights
         let aa9250 = Flight(airline: americanAirlnes,
@@ -420,7 +460,7 @@ class DeparturesTableViewController: UITableViewController {
                             arrivalGate: "A29",
                             arrivalBaggage: nil)
         
-        let flight9E5573 = Flight(airline: endeavourAir,
+        let v9E5573 = Flight(airline: endeavourAir,
                                   number: "5573",
                                   plane: bombardierCRJ,
                                   departureAirport: jfk,
@@ -456,8 +496,8 @@ class DeparturesTableViewController: UITableViewController {
                             plane: bombardierCRJ,
                             departureAirport: jfk,
                             arrivalAirport: atl,
-                            scheduledDeparture: flight9E5573.scheduledDeparture,
-                            scheduledArrival: flight9E5573.scheduledArrival,
+                            scheduledDeparture: v9E5573.scheduledDeparture,
+                            scheduledArrival: v9E5573.scheduledArrival,
                             primaryFlightStatus: .Cancelled,
                             isCodeShare: true,
                             flightType: .Departure,
@@ -507,8 +547,17 @@ class DeparturesTableViewController: UITableViewController {
                           arrivalGate: nil,
                           arrivalBaggage: nil)
 
-        let flights: [Flight] = [aa9250, ek6705, at203, az5877, ad7423, av6624, vs4631, flight9E5573, dl5573, cx85]
-        return flights
+        flightArray.append(contentsOf: [aa9250,
+                                        ek6705,
+                                        at203,
+                                        az5877,
+                                        ad7423,
+                                        av6624,
+                                        vs4631,
+                                        v9E5573,
+                                        dl5573,
+                                        cx85])
+        return flightArray
         }
 }
 
