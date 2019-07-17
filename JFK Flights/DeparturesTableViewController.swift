@@ -546,6 +546,8 @@ class DeparturesTableViewController: UITableViewController {
                           arrivalTerminal: nil,
                           arrivalGate: nil,
                           arrivalBaggage: nil)
+        
+
 
         flightArray.append(contentsOf: [aa9250,
                                         ek6705,
@@ -557,7 +559,14 @@ class DeparturesTableViewController: UITableViewController {
                                         v9E5573,
                                         dl5573,
                                         cx85])
+//        func calculateTotalTimeInMinutes(flightTime: Flight) -> Bool {
+//
+//        }
+        
+//        flightArray.sorted(by: { $0.calculateTotalTimeInMinutes > $1.calculateTotalTimeInMinutes })
+//        
         return flightArray
+        
         }
 }
 
