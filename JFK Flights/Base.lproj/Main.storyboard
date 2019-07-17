@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7SK-bP-V6U">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="wZ9-bU-bGe">
+            <objects>
+                <tableViewController id="WjM-80-jMo" customClass="DeparturesTableViewController" customModule="JFK_Flights" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hAy-FU-PYP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DepartureFlightCell" rowHeight="49" id="hen-nJ-9t8" customClass="DepartureCell" customModule="JFK_Flights" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="49"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hen-nJ-9t8" id="PQA-m4-rV7" customClass="DepartureCell" customModule="JFK_Flights" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="48.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="01:04" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="eqd-Uf-rmB">
+                                            <rect key="frame" x="20" y="12" width="66.5" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AA 9250" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgv-4q-2am">
+                                            <rect key="frame" x="311" y="12" width="93" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DALLAS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eAz-oV-bee">
+                                            <rect key="frame" x="109" y="11" width="183" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="arrivalCityLabel" destination="eAz-oV-bee" id="GuS-bc-6hK"/>
+                                    <outlet property="flightIdentifierLabel" destination="Vgv-4q-2am" id="gJI-7B-aSH"/>
+                                    <outlet property="flightTimeLabel" destination="eqd-Uf-rmB" id="GbD-6v-rfj"/>
+                                    <segue destination="XaG-he-zJg" kind="show" id="C4r-AI-KIw"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WjM-80-jMo" id="nIs-hq-gDQ"/>
+                            <outlet property="delegate" destination="WjM-80-jMo" id="Mto-BF-Tt0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" largeTitleDisplayMode="always" id="4dI-Vh-UKC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gnh-94-csS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="42" y="-125"/>
+        </scene>
+        <!--Flight Detail View Controller-->
+        <scene sceneID="NFK-6S-8eG">
+            <objects>
+                <viewController id="XaG-he-zJg" customClass="FlightDetailViewController" customModule="JFK_Flights" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="77i-N0-3nV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AA 9250" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1L-FQ-Bz8">
+                                <rect key="frame" x="20" y="108" width="88.5" height="27"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="American Airlines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SjP-wN-KDh">
+                                <rect key="frame" x="20" y="135" width="118" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEF-Rc-TcX">
+                                <rect key="frame" x="0.0" y="164" width="414" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ARRIVED - ON TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlz-fd-ugO">
+                                        <rect key="frame" x="0.0" y="26" width="414" height="29"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="29"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Qlz-fd-ugO" firstAttribute="centerY" secondItem="VEF-Rc-TcX" secondAttribute="centerY" id="J1P-IG-3tY"/>
+                                    <constraint firstItem="Qlz-fd-ugO" firstAttribute="centerX" secondItem="VEF-Rc-TcX" secondAttribute="centerX" id="Z2C-RZ-YaW"/>
+                                    <constraint firstAttribute="height" constant="80" id="lvE-Wl-8Ra"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QvN-ut-FBL">
+                                <rect key="frame" x="0.0" y="244" width="414" height="417"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksi-Ip-JnD">
+                                        <rect key="frame" x="20" y="8" width="120" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="O0X-cx-uzh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TERMINAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfY-yT-mYK">
+                                        <rect key="frame" x="20" y="210" width="120" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="yZa-Ph-rlO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GATE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Dl-Ph-JxM">
+                                        <rect key="frame" x="20" y="279" width="120" height="16.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="hvR-fn-54S"/>
+                                            <constraint firstAttribute="width" constant="120" id="lu7-if-f4C"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GATE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUU-Dk-JXp">
+                                        <rect key="frame" x="227" y="279" width="120" height="16.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="FrN-8m-c2F"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="HYj-d9-fHZ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="SJq-17-3pv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BAGGAGE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9a-b7-k3V">
+                                        <rect key="frame" x="227" y="303.5" width="120" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="6uK-lK-j1z"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="KWJ-Yq-29H"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="TX9-Ez-pNd"/>
+                                            <constraint firstAttribute="width" constant="120" id="pZN-US-Uht"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TERMINAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwh-9Q-dac">
+                                        <rect key="frame" x="227" y="210" width="120" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="5W9-Dl-xXf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scheduled: 12-7-2019 at 16:49" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1h-x0-zCJ">
+                                        <rect key="frame" x="20" y="96" width="153.5" height="13"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John F.Kennedy International" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ug8-0p-VbM">
+                                        <rect key="frame" x="20" y="172" width="143" height="13"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dallas International" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wym-Lx-OFp">
+                                        <rect key="frame" x="227" y="172" width="94" height="13"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scheduled: 12-7-2019 at 16:49" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeG-ep-Ojf">
+                                        <rect key="frame" x="227" y="96" width="153.5" height="13"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arrived" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1D-28-blL">
+                                        <rect key="frame" x="227" y="8" width="54" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12-7-2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDt-2A-xsC">
+                                        <rect key="frame" x="20" y="36" width="66" height="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12-7-2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDT-LG-6fn">
+                                        <rect key="frame" x="227" y="36" width="66" height="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:49" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjn-U7-hfJ">
+                                        <rect key="frame" x="20" y="53" width="95" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JFK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98x-Kc-fi0">
+                                        <rect key="frame" x="20" y="134" width="63.5" height="41"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wwr-Gy-rx8">
+                                        <rect key="frame" x="20" y="230" width="66" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="vND-of-MkT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltS-1s-aPl">
+                                        <rect key="frame" x="227" y="230" width="66" height="41"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DFW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gt8-6b-eft">
+                                        <rect key="frame" x="227" y="134" width="64" height="41"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:49" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acf-cY-cFP">
+                                        <rect key="frame" x="227" y="53" width="95" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLANE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFf-Mu-ju2">
+                                        <rect key="frame" x="20" y="380" width="386" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="386" id="BOx-XN-eYk"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="386" id="H5M-tD-h9b"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="NaO-Mt-MfH"/>
+                                            <constraint firstAttribute="width" constant="386" id="TNd-7x-wb4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="y1h-x0-zCJ" firstAttribute="leading" secondItem="QvN-ut-FBL" secondAttribute="leading" constant="20" id="19c-da-dqP"/>
+                                    <constraint firstItem="98x-Kc-fi0" firstAttribute="leading" secondItem="QvN-ut-FBL" secondAttribute="leading" constant="20" id="4AA-fl-yFw"/>
+                                    <constraint firstItem="h1D-28-blL" firstAttribute="leading" secondItem="FDT-LG-6fn" secondAttribute="leading" id="5N3-U5-Cg7"/>
+                                    <constraint firstAttribute="height" constant="417" id="6DF-ht-UVl"/>
+                                    <constraint firstItem="cjn-U7-hfJ" firstAttribute="top" secondItem="zDt-2A-xsC" secondAttribute="bottom" id="6Gj-50-yja"/>
+                                    <constraint firstItem="cjn-U7-hfJ" firstAttribute="leading" secondItem="QvN-ut-FBL" secondAttribute="leading" constant="20" id="7Ia-g1-e4e"/>
+                                    <constraint firstItem="jfY-yT-mYK" firstAttribute="leading" secondItem="QvN-ut-FBL" secondAttribute="leading" constant="20" id="9il-fv-y2p"/>
+                                    <constraint firstAttribute="trailing" secondItem="WUU-Dk-JXp" secondAttribute="trailing" constant="67" id="ACY-3O-tNa"/>
+                                    <constraint firstItem="yeG-ep-Ojf" firstAttribute="top" secondItem="Acf-cY-cFP" secondAttribute="bottom" id="B1Y-vQ-gAi"/>
+                                    <constraint firstItem="y1h-x0-zCJ" firstAttribute="top" secondItem="cjn-U7-hfJ" secondAttribute="bottom" id="EOH-lo-CS1"/>
+                                    <constraint firstItem="Wym-Lx-OFp" firstAttribute="leading" secondItem="h1D-28-blL" secondAttribute="leading" id="FPm-Pv-fxo"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gt8-6b-eft" secondAttribute="trailing" constant="123" id="Fvs-b9-IgB"/>
+                                    <constraint firstItem="Gt8-6b-eft" firstAttribute="top" secondItem="yeG-ep-Ojf" secondAttribute="bottom" constant="25" id="Jeu-b9-Eyk"/>
+                                    <constraint firstItem="WUU-Dk-JXp" firstAttribute="top" secondItem="ltS-1s-aPl" secondAttribute="bottom" constant="8" id="Lbo-Py-R5W"/>
+                                    <constraint firstItem="zDt-2A-xsC" firstAttribute="leading" secondItem="QvN-ut-FBL" secondAttribute="leading" constant="20" id="Lfc-t6-x80"/>
+                                    <constraint firstItem="ug8-0p-VbM" firstAttribute="top" secondItem="98x-Kc-fi0" secondAttribute="bottom" constant="-3" id="Lxd-g2-gLt"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mwh-9Q-dac" secondAttribute="trailing" constant="67" id="M7e-3D-Y5L"/>
+                                    <constraint firstItem="Mwh-9Q-dac" firstAttribute="top" secondItem="Wym-Lx-OFp" secondAttribute="bottom" constant="25" id="N4j-fk-z0C"/>
+                                    <constraint firstAttribute="trailing" secondItem="UFf-Mu-ju2" secondAttribute="trailing" constant="8" id="NCX-g2-Aba"/>
+                                    <constraint firstItem="zDt-2A-xsC" firstAttribute="top" secondItem="Ksi-Ip-JnD" secondAttribute="bottom" constant="8" id="Owp-a9-E9s"/>
+                                    <constraint firstItem="Wwr-Gy-rx8" firstAttribute="leading" secondItem="QvN-ut-FBL" secondAttribute="leading" constant="20" id="PAT-Nh-kvs"/>
+                                    <constraint firstItem="Ksi-Ip-JnD" firstAttribute="top" secondItem="QvN-ut-FBL" secondAttribute="top" constant="8" id="PIn-ir-SnC"/>
+                                    <constraint firstAttribute="trailing" secondItem="c9a-b7-k3V" secondAttribute="trailing" constant="67" id="Qha-fv-c8x"/>
+                                    <constraint firstItem="98x-Kc-fi0" firstAttribute="top" secondItem="y1h-x0-zCJ" secondAttribute="bottom" constant="25" id="RNm-fZ-Jov"/>
+                                    <constraint firstItem="ltS-1s-aPl" firstAttribute="leading" secondItem="Mwh-9Q-dac" secondAttribute="leading" id="RpQ-Ev-nff"/>
+                                    <constraint firstItem="ug8-0p-VbM" firstAttribute="leading" secondItem="QvN-ut-FBL" secondAttribute="leading" constant="20" id="UtM-oS-RNf"/>
+                                    <constraint firstAttribute="trailing" secondItem="yeG-ep-Ojf" secondAttribute="trailing" constant="33.5" id="Vb2-YT-chq"/>
+                                    <constraint firstItem="Wwr-Gy-rx8" firstAttribute="top" secondItem="jfY-yT-mYK" secondAttribute="bottom" id="XX6-yv-nU6"/>
+                                    <constraint firstAttribute="trailing" secondItem="ltS-1s-aPl" secondAttribute="trailing" constant="121" id="ZkL-Da-QSF"/>
+                                    <constraint firstItem="FDT-LG-6fn" firstAttribute="top" secondItem="h1D-28-blL" secondAttribute="bottom" constant="8" id="akS-bz-KKK"/>
+                                    <constraint firstItem="h1D-28-blL" firstAttribute="top" secondItem="QvN-ut-FBL" secondAttribute="top" constant="8" id="bM6-AY-XQ7"/>
+                                    <constraint firstItem="ltS-1s-aPl" firstAttribute="top" secondItem="Mwh-9Q-dac" secondAttribute="bottom" id="bMZ-BS-cX4"/>
+                                    <constraint firstItem="Wym-Lx-OFp" firstAttribute="top" secondItem="yeG-ep-Ojf" secondAttribute="bottom" constant="63" id="c9i-U4-bGU"/>
+                                    <constraint firstItem="9Dl-Ph-JxM" firstAttribute="top" secondItem="Wwr-Gy-rx8" secondAttribute="bottom" constant="8" id="cwP-aM-0ed"/>
+                                    <constraint firstItem="9Dl-Ph-JxM" firstAttribute="leading" secondItem="QvN-ut-FBL" secondAttribute="leading" constant="20" id="hK6-P7-0Co"/>
+                                    <constraint firstAttribute="trailing" secondItem="h1D-28-blL" secondAttribute="trailing" constant="133" id="iEl-R9-D0z"/>
+                                    <constraint firstItem="Ksi-Ip-JnD" firstAttribute="leading" secondItem="QvN-ut-FBL" secondAttribute="leading" constant="20" id="ioo-9T-qoN"/>
+                                    <constraint firstItem="Wwr-Gy-rx8" firstAttribute="top" secondItem="jfY-yT-mYK" secondAttribute="bottom" id="m2p-fr-JVn"/>
+                                    <constraint firstItem="jfY-yT-mYK" firstAttribute="top" secondItem="ug8-0p-VbM" secondAttribute="bottom" constant="25" id="pal-tW-pV9"/>
+                                    <constraint firstItem="UFf-Mu-ju2" firstAttribute="leading" secondItem="QvN-ut-FBL" secondAttribute="leading" constant="20" id="qQC-BR-Fl5"/>
+                                    <constraint firstItem="Acf-cY-cFP" firstAttribute="top" secondItem="FDT-LG-6fn" secondAttribute="bottom" id="rWN-zA-Exw"/>
+                                    <constraint firstItem="UFf-Mu-ju2" firstAttribute="firstBaseline" secondItem="c9a-b7-k3V" secondAttribute="baseline" constant="76" id="rWT-uE-rHt"/>
+                                    <constraint firstItem="UFf-Mu-ju2" firstAttribute="top" secondItem="c9a-b7-k3V" secondAttribute="bottom" constant="59.5" id="sfO-vi-3MM"/>
+                                    <constraint firstAttribute="trailing" secondItem="Acf-cY-cFP" secondAttribute="trailing" constant="92" id="tGH-ez-QJl"/>
+                                    <constraint firstAttribute="trailing" secondItem="FDT-LG-6fn" secondAttribute="trailing" constant="121" id="xkA-Hp-3OI"/>
+                                    <constraint firstItem="c9a-b7-k3V" firstAttribute="top" secondItem="WUU-Dk-JXp" secondAttribute="bottom" constant="8" id="xxN-O1-bcc"/>
+                                    <constraint firstItem="UFf-Mu-ju2" firstAttribute="top" secondItem="c9a-b7-k3V" secondAttribute="bottom" constant="59.5" id="zSr-3G-HUG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QvN-ut-FBL" firstAttribute="top" secondItem="VEF-Rc-TcX" secondAttribute="bottom" id="AAj-Xl-4Iv"/>
+                            <constraint firstItem="QvN-ut-FBL" firstAttribute="centerX" secondItem="af2-IS-EMY" secondAttribute="centerX" id="JSG-Hu-u3f"/>
+                            <constraint firstItem="SjP-wN-KDh" firstAttribute="leading" secondItem="af2-IS-EMY" secondAttribute="leading" constant="20" id="Pws-QZ-iJ9"/>
+                            <constraint firstItem="e1L-FQ-Bz8" firstAttribute="leading" secondItem="af2-IS-EMY" secondAttribute="leading" constant="20" id="SGc-mv-7Fo"/>
+                            <constraint firstItem="e1L-FQ-Bz8" firstAttribute="top" secondItem="af2-IS-EMY" secondAttribute="top" constant="20" id="SNW-wr-4EW"/>
+                            <constraint firstItem="VEF-Rc-TcX" firstAttribute="top" secondItem="SjP-wN-KDh" secondAttribute="bottom" constant="10" id="W6t-l3-nqP"/>
+                            <constraint firstItem="VEF-Rc-TcX" firstAttribute="width" secondItem="77i-N0-3nV" secondAttribute="width" id="dGA-YZ-bES"/>
+                            <constraint firstItem="SjP-wN-KDh" firstAttribute="top" secondItem="e1L-FQ-Bz8" secondAttribute="bottom" id="e2S-xf-2IH"/>
+                            <constraint firstItem="QvN-ut-FBL" firstAttribute="width" secondItem="77i-N0-3nV" secondAttribute="width" id="nJZ-x1-7Kp"/>
+                            <constraint firstItem="VEF-Rc-TcX" firstAttribute="centerX" secondItem="af2-IS-EMY" secondAttribute="centerX" id="rhM-dX-WVj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="af2-IS-EMY"/>
+                    </view>
+                    <connections>
+                        <outlet property="airlineLabel" destination="SjP-wN-KDh" id="PwC-qt-gyw"/>
+                        <outlet property="airportNameLabel" destination="ug8-0p-VbM" id="pz8-8i-XJg"/>
+                        <outlet property="airportSignLabel" destination="98x-Kc-fi0" id="rfU-sx-LPT"/>
+                        <outlet property="arrivalAirportNameLabel" destination="Wym-Lx-OFp" id="w0P-rc-9J4"/>
+                        <outlet property="arrivalAirportSignLabel" destination="Gt8-6b-eft" id="8VN-6G-aZ9"/>
+                        <outlet property="arrivalDateLabel" destination="FDT-LG-6fn" id="Od7-Tq-ifV"/>
+                        <outlet property="arrivalGateLabel" destination="WUU-Dk-JXp" id="pXR-DB-tXk"/>
+                        <outlet property="arrivalTerminalLabel" destination="ltS-1s-aPl" id="gHU-Gu-I4a"/>
+                        <outlet property="arrivalTimeLabel" destination="Acf-cY-cFP" id="wYo-tH-l2Q"/>
+                        <outlet property="baggageLabel" destination="c9a-b7-k3V" id="io7-de-O2c"/>
+                        <outlet property="currentArrivalLabel" destination="h1D-28-blL" id="Tqu-MT-gWO"/>
+                        <outlet property="currentDepartureLabel" destination="Ksi-Ip-JnD" id="GHV-V0-ufc"/>
+                        <outlet property="departureDateLabel" destination="zDt-2A-xsC" id="EEZ-kO-jcy"/>
+                        <outlet property="departureGateLabel" destination="9Dl-Ph-JxM" id="LFu-Z1-W4G"/>
+                        <outlet property="departureTerminalLabel" destination="Wwr-Gy-rx8" id="Wls-Ap-mYV"/>
+                        <outlet property="departureTimeLabel" destination="cjn-U7-hfJ" id="jGB-Bf-n9d"/>
+                        <outlet property="flightDetails" destination="QvN-ut-FBL" id="W9V-pe-59e"/>
+                        <outlet property="flightNameLabel" destination="e1L-FQ-Bz8" id="yTp-Vn-1tS"/>
+                        <outlet property="flightStatusLarge" destination="Qlz-fd-ugO" id="Uo2-Ri-yTE"/>
+                        <outlet property="planeLabel" destination="UFf-Mu-ju2" id="oeK-Pt-SZA"/>
+                        <outlet property="scheduledArrivalLabel" destination="yeG-ep-Ojf" id="feI-Rl-wf3"/>
+                        <outlet property="scheduledDepartureLabel" destination="y1h-x0-zCJ" id="6GW-Mu-vla"/>
+                        <outlet property="statusView" destination="VEF-Rc-TcX" id="0SO-t7-7FV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kNl-N3-z2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="805.79710144927537" y="-125.22321428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zEa-RB-8JK">
+            <objects>
+                <navigationController id="7SK-bP-V6U" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cFf-ER-BFb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WjM-80-jMo" kind="relationship" relationship="rootViewController" id="1XJ-zT-8dI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fa4-dv-PoQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-794" y="-125"/>
+        </scene>
+    </scenes>
+</document>
